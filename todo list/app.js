@@ -4,12 +4,11 @@ const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo")
 
 //event listeners
-document.addEventListener("DOMContentLoaded", getTodos)
+document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click" , addTodo);
 todoList.addEventListener("click",deleteCheck);
-//filterOption.addEventListener("click" , filterTodo)
+      //not running       //             // filterOption.addEventListener("click" , filterTodo)
 
- 
 function addTodo(event){
 //prevent from submitting
 event.preventDefault(); 
@@ -27,12 +26,12 @@ saveLocalTodos(todoInput.value);
 const completedButton= document.createElement("button");
 completedButton.innerHTML = '<i class= "fas fa-check"></i>';
 completedButton.classList.add("complete-btn");
-todoDiv.appendChild(completedButton)
+todoDiv.appendChild(completedButton);
 //trash button 
 const trashButton= document.createElement("button");
 trashButton.innerHTML = '<i class= "fas fa-trash"></i>';
 trashButton.classList.add("trash-btn");
-todoDiv.appendChild(trashButton)
+todoDiv.appendChild(trashButton);
 //append todo to ul
 todoList.appendChild(todoDiv);
 // clear todo input value
@@ -86,7 +85,7 @@ function filterTodo(e){
 }
 
 function saveLocalTodos(todo){
-// check ----hey  do i have alredy have 
+// check ----hey  do i have alredy have
 let todos;
 if (localStorage.getItem("todos")===null){
     todos = [];
