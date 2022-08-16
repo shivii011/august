@@ -17,18 +17,18 @@ xhr.onload = function () {
         let articles = json.articles;
         // console.log(articles);
         let newsHtml = "";
-        articles.forEach(element => {
+        articles.forEach(function(element , index) {
             // console.log(articles[news]);
             let news = `<div class="card">
-                            <div class="card-header" id="headingOne">
+                            <div class="card-header" id="heading${index}">
                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                ${element["title"]}
+                                <button class="btn btn-link collapsed show" type="button" data-toggle="collapse" data-target="#collapse${index}" aria-expanded="true" aria-controls="collaps${index}e">
+                                <b>NEWS ${index+1} </b>${element["title"]}
                                 </button>
                             </h2>
                             </div>
                             
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div id="collapse${index}" class="collapse show " aria-labelledby="heading${index}" data-parent="#accordionExample">
                             <div class="card-body">
                         ${element["content"]}.<a href = "${element['url']}">read more here </a>
                             </div>
